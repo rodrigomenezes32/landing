@@ -1,0 +1,355 @@
+*
+    border: 0;
+    padding: 0;
+    margin: 0;
+
+$desktop: 768px;
+    
+@font-face 
+    font-family DINWeb
+    font-weight bold
+    src: url(../fonts/DINWeb-Bold.woff)
+    
+@font-face
+    font-family DINWeb
+    font-weight normal
+    src: url(../fonts/DINWeb.woff)
+    
+@font-face 
+    font-family DINWeb
+    font-weight light
+    src: url(../fonts/DINWeb-Light.woff)
+
+body, button, input, select, textarea
+    font-family: 'DINWeb', sans-serif
+
+h1, h2, h3
+    width: 100%;
+
+$black: #000000;
+$black_85: rgba(0,0,0,0.85);
+$black_gradient: linear-gradient(180deg, rgba(0,0,0,0.30015756302521013) 0%, rgba(0,0,0,1) 100%);
+$white: #FFFFFF;
+$gray: #A1A1A1;
+$green: #0FD551;
+
+body
+    background-color: $black
+
+.mobile-logo, .navbar-logo
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    img 
+        width: 250px;
+        height: auto;
+
+
+.menu 
+    height: 100%
+    width: 100%
+    background: $black_85;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -1000px;
+    transition: margin-top 1s;
+    z-index: 98;
+    .navbar-menu
+        ul 
+            list-style: none;
+            .menu-item
+                text-align: center;
+                height: 35px;
+                vertical-align: center;
+                line-height: 35px;
+                a  
+                    font-size: 20px;
+                    text-transform: uppercase
+                    font-family: 'DINWeb', sans-serif;
+                    font-weight: bold;
+                    color: $white;
+                    text-decoration: none;
+    &.active
+        margin-top: 0px;
+        transition: margin-top 1s;
+        z-index: 98
+
+section
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 2rem 0 5rem;
+
+
+.header
+    position: relative;
+    background: url(../img/earth-background.jpg);
+    background-size: cover;
+    background-position: center bottom;
+
+.overlay
+    background: $black_gradient
+    position: absolute; 
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+.hero 
+    width: 100%
+    height: 100vh
+
+    position: relative;
+    z-index: 1
+    .dragon 
+        width: 70%;
+        height: auto;
+        display: block;
+        margin: 0px auto;
+
+.call-hero, .text-box
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3rem 0rem;
+
+.title 
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 20px;
+    span 
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 30px;
+p 
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    width: 100%;
+    
+@mixin box-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $color: $default) 
+    box-shadow: $x-axis $y-axis $blur $color;
+
+
+.default-img
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0px auto;
+    @include box-shadow(5px, 5px, 5px, rgba(0,0,0,.1))
+
+.has-text-centered
+    text-align: center;
+
+.has-text-white
+    color: $white
+
+.has-white-background
+    background-color: $white
+
+.container
+    height: 100%;
+
+.is-flex 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+.is-centered 
+    align-items: center;
+    justify-content: center;
+
+.button 
+    padding: .8rem 1.5rem;
+    font-size: 12px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold
+    text-decoration: none;
+    margin-top: 1rem;
+    &.btn-white 
+        color: $white;
+        border: 2px solid $white;
+        &:hover
+            background: $white;
+            color: $black;
+            transition: background 1s;
+    &.btn-black 
+        color: $black;
+        border: 2px solid $black;
+        &:hover
+            background: $black;
+            color: $white;
+            transition: background 1s;
+    &.is-centered
+        margin: 1rem auto 0rem;
+
+.form-wrapper
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0px auto;
+
+.form-control
+    label 
+        display: block;
+        width: 100%;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-shadow: 1px 3px 10px rgba(0,0,0,0.2)
+        padding-left: .5rem
+    input 
+        margin: 5px 0px 2rem;
+        border-bottom: 1px solid $gray
+        width: 90%;
+        padding: .5rem
+        ::placeholder
+            color: $gray 
+            text-transform: uppercase
+
+.button 
+    &.submit 
+        font-size: 12px;
+        color: $white;
+        background-color: $green;
+        width: 100%;
+        padding: .7rem;
+        @include box-shadow(5px, 5px, 5px, rgba(0,0,0,.1))
+
+
+.arrow-down 
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #FFFFFF;
+    display: block;
+    margin: -2rem auto 0px;
+
+.hamburger
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: $white;
+    width: 45px;
+    height: 45px;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include box-shadow(5px, 5px, 5px, rgba(0,0,0,.1))
+    i
+        font-size: 25px;
+        &.invisible
+            display: none;
+
+@media screen and (min-width: $desktop)
+    .container
+        max-width: 1440px;
+        margin: 0px auto;
+
+    .columns
+        &.is-flex
+            display: flex;
+            flex-direction: row;
+        .column
+            &.is-6-desktop
+                width: 50%;
+            &.is-12-desktop
+                width: 100%;
+            &.is-centered
+                align-items: center;
+    
+    section
+        padding-top: 5rem;
+
+    .title 
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 25px;
+        span 
+            font-size: 42px;
+            font-weight: 600;
+            line-height: 60px;
+    p 
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 25px;
+        width: 100%;
+
+    .arrow-down 
+        margin: -5rem auto 0px;
+
+    .hamburger
+        display: none;
+
+    .mobile-logo
+        display: none;
+
+    .menu 
+        height: 90px;
+        width: 100%;
+        background: transparent;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+        transition: margin-top 1s;
+        z-index: 98;
+        .navbar
+            width: 100%;
+            display: flex
+            margin: 0px auto;
+            align-items: center;
+            .navbar-logo
+                width: 350px;
+                height: 90px;
+                display: flex; 
+                justify-content: center;
+                align-items: center;
+
+            .navbar-menu
+                display: flex;
+                flex-grow: 1;
+                justify-content: flex-end;
+                ul 
+                    display: flex;
+                    flex-direction: row;
+                    height: 90px;
+                    .menu-item
+                        text-align: center;
+                        height: 90px;
+                        vertical-align: center;
+                        line-height: 90px;
+                        align-items: center
+                        a  
+                            font-size: 20px;
+                            text-transform: uppercase
+                            font-family: 'DINWeb', sans-serif;
+                            font-weight: bold;
+                            color: $white;
+                            text-decoration: none;
+                            padding-left: 3rem;
+                            padding-right: 3rem;
+
+
+            &.active
+                margin-top: 0px;
+                transition: margin-top 1s;
+                z-index: 98
